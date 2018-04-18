@@ -39,6 +39,7 @@ RUN yum install -y epel-release && \
 # Required if you plan on running images as a non-root user).
 RUN sed -i 's/80/8080/' /etc/nginx/nginx.conf
 RUN sed -i 's/user nginx;//' /etc/nginx/nginx.conf
+RUN sed -i 's/_;/_;\nport_in_redirect off;/' /etc/nginx/nginx.conf
 
 # Download and install a binary from nodejs.org
 # Add the gpg keys listed at https://github.com/nodejs/node
