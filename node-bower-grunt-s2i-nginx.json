@@ -1,0 +1,40 @@
+{
+  "kind": "ImageStream",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "s2i-node-bower-grunt-nginx",
+    "creationTimestamp": null
+  },
+  "spec": {
+    "dockerImageRepository": "glarfs/s2i-node-bower-grunt-nginx",
+    "tags": [
+      {
+        "name": "latest",
+        "annotations": {
+          "description": "Build Node Bower Grunt apps with CLI and run them with NGINX",
+          "iconClass": "js-icon",
+          "supports": "node,node:1",
+          "tags": "builder,nginx",
+          "version": "1"
+        },
+        "from": {
+          "kind": "ImageStreamTag",
+          "name": "latest"
+        }
+      }
+    ]
+  },
+  "status": {
+    "dockerImageRepository": "glarfs/s2i-node-bower-grunt-nginx",
+    "tags": [
+      {
+        "tag": "1",
+        "items": [
+          {
+            "dockerImageReference": "glarfs/s2i-node-bower-grunt-nginx:latest"
+          }
+        ]
+      }
+    ]
+  }
+}
