@@ -11,6 +11,13 @@ echo "---> Installing NPM Dependencies (with dev)"
 npm install
 npm install --only=dev
 
+echo "---> Installing Bower Dependencies (with dev)"
+bower install
+
+
+echo "---> Building Grunt CLI Application"
+grunt dist
+
 popd
 
 if [ -d "/tmp/src/openshift/conf" ]; then
