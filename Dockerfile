@@ -65,6 +65,12 @@ RUN set -ex && \
   gpg --batch -d SHASUMS256.txt.asc | grep " node-v${NODE_VERSION}-linux-x64.tar.gz\$" | sha256sum -c - && \
   tar -zxf node-v${NODE_VERSION}-linux-x64.tar.gz -C /usr/local --strip-components=1 && \
   npm install -g npm@${NPM_VERSION} && \
+  npm install -g bower@1.8.2 && \
+  npm install -g grunt-cli@0.1.13 && \
+  npm install -g node-sass@3.8.0 && \
+  npm install -g bower-art-resolver@2.0.9 && \
+  npm install -g webdriver-manager@12.0.6 && \
+  npm install -g protractor@5.3.0 && \
   find /usr/local/lib/node_modules/npm -name test -o -name .bin -type d | xargs rm -rf; \
   rm -rf ~/node-v${NODE_VERSION}-linux-x64.tar.gz ~/SHASUMS256.txt.asc /tmp/node-v${NODE_VERSION} ~/.npm ~/.node-gyp ~/.gnupg \
     /usr/share/man /tmp/* /usr/local/lib/node_modules/npm/man /usr/local/lib/node_modules/npm/doc /usr/local/lib/node_modules/npm/html
